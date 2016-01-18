@@ -19,10 +19,16 @@ USER root
 RUN chown -R main:main /home/main
 
 
-# Install minconda3
+# Install minconda3 package manager...
 USER main
 RUN echo "Downloading Miniconda..." && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
     $SHELL Miniconda3-latest-Linux-x86_64.sh -b && \
     rm Miniconda3-latest-Linux-x86_64.sh
-ENV PATH $HOME/anaconda/bin:$PATH
+ENV PATH $HOME/miniconda3/bin:$PATH
+
+# Install various Python dependencies...
+RUN conda install --yes jupyter
+RUN conda install --yes numpy pandas scipy \
+    matplotlib seaborn bokeh
+RUN conda clean -yes -tarballs
