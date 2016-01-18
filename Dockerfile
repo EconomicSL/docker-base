@@ -31,4 +31,4 @@ ENV PATH $HOME/miniconda3/bin:$PATH
 RUN conda install --yes jupyter
 RUN conda install --yes numpy pandas scipy \
     matplotlib seaborn bokeh
-RUN conda clean -yes -tarballs
+RUN conda clean --yes --tarballs
