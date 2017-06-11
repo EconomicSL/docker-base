@@ -9,7 +9,7 @@ You need to build the image `docker build . -t esl/base`.
 
 Then run the container `docker run -p 8888:8888 esl/base`
 
-This starts a [Jupyter Notebook](http://jupyter.org/) on port 8888. You will need to copy the URL (which includes an access token) from the command line output.
+This starts a [Jupyter Notebook](http://jupyter.org/) on port `8888`. You will need to copy the URL (which includes an access token) from the command line output.
 
 #### Linux
 
@@ -19,4 +19,4 @@ You can access the notebook at `localhost:8888`
 
 If you are using docker-machine you need to find out the `DOCKER_HOST` ip address by running `docker env [your machine name]`
 
-Which lets you access the notebook (for example) at `192.168.99.100:8888`.
+You then use this ip address to access the notebook. For example `192.168.99.100:8888`.
