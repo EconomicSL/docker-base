@@ -31,3 +31,7 @@ ENV PATH $HOME/miniconda3/bin:$PATH
 RUN conda install --yes jupyter
 RUN conda install --yes numpy pandas scipy matplotlib seaborn bokeh
 RUN conda clean --yes --tarballs
+
+EXPOSE 8888
+
+ENTRYPOINT ["jupyter", "notebook", "--ip=0.0.0.0"]
