@@ -32,6 +32,8 @@ RUN conda install --yes jupyter
 RUN conda install --yes numpy pandas scipy matplotlib seaborn bokeh
 RUN conda clean --yes --tarballs
 
+## Scala & sbt
+
 ENV SCALA_VERSION 2.12.2
 ENV SBT_VERSION 0.13.15
 
@@ -54,6 +56,8 @@ RUN \
   apt-get install sbt
 
 USER main
+
+WORKDIR $HOME
 
 RUN sbt sbtVersion
 
